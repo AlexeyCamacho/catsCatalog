@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::redirect('/', '/cats');
+
 Route::any( '/{any}', function(){
     return view('main');
 })->where('any', '^((?!api\/).)*$');

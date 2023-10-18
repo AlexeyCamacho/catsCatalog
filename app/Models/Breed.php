@@ -14,6 +14,7 @@ class Breed extends Model
         'name',
         'description',
         'avr_life_time',
+        'breed_id'
     ];
 
     public function cats(): HasMany

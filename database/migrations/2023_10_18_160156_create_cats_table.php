@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('cats', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('breed_id');
-            $table->string('name');
-            $table->string('image');
+            $table->string('name', 64);
             $table->integer('age');
+            $table->string('image', 128)->nullable();
             $table->timestamps();
 
-            $table->foreign('breed_id')->references('id')->on('breed')->onDelete('cascade');
+            $table->foreign('breed_id')->references('id')->on('breeds')->onDelete('cascade');
         });
     }
 

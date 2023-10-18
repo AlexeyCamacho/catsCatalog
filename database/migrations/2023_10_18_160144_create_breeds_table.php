@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('breed', function (Blueprint $table) {
+        Schema::create('breeds', function (Blueprint $table) {
             $table->id();
+            $table->string('breed_id', 32);
             $table->string('name', 64);
             $table->text('description');
             $table->integer('avr_life_time');
