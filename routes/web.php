@@ -23,4 +23,8 @@ Route::prefix("api")->group(function () {
     Route::prefix("cats")->group(function () {
 
     });
+
+    Route::prefix("breeds")->group(function () {
+        Route::get('/', [\App\Http\Controllers\BreedsController::class, 'getAllBreeds']);
+    });
 });

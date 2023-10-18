@@ -11,9 +11,8 @@ import Toast from "vue-toastification"
 import "vue-toastification/dist/index.css";
 
 const app = createApp(App)
-const pinia = createPinia()
 
-app.use(router).use(VueAxios, axios).use(pinia).use(ElementPlus)
+app.use(router).use(VueAxios, axios).use(createPinia()).use(ElementPlus)
     .use(Toast,{
         timeout: 3000
     })
