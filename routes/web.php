@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\BreedsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +27,9 @@ Route::prefix("api")->group(function () {
     });
 
     Route::prefix("breeds")->group(function () {
-        Route::get('/', [\App\Http\Controllers\BreedsController::class, 'getAllBreeds']);
+        Route::get('/', [BreedsController::class, 'getAllBreeds']);
+        Route::post('/', [BreedsController::class, 'createBreed']);
+        Route::put('/{id}', [BreedsController::class, 'updateBreed']);
+        Route::delete('/{id}', [BreedsController::class, 'deleteBreed']);
     });
 });
